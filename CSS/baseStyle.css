@@ -1,0 +1,73 @@
+.styled {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgb(47, 85, 141);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+label,
+textarea {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+.textarea {
+  padding: 10px;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+}
+
+
+label {
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}
+.container {
+  width: 500px;
+  height: 120;
+  border-width: 12px;
+  border-style: solid;
+  border-color: rgb(29, 175, 54);
+  background: #fff;
+  padding: 20px 20px 20px 20px;
+}
+.box {
+  width: 60%;
+  border: 5px solid #9325bc;
+  padding: 20px;
+}
+.box:hover {
+  -moz-box-shadow: 0 0 10px #ccc;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
+}
+.centerAllign
+{
+    margin: 0;
+    padding-left: 40%;    
+    top: 50%;
+}
