@@ -9,10 +9,10 @@
 }*/
 
 var btn = document.getElementById("btnAction");
-  if (btn != null) {
-    btn.addEventListener("click", onClickHandler);
-    btn.addEventListener("click", onClickHandler_2);
-    //btn.onclick = onClickHandler_1;
+if (btn != null) {
+  btn.addEventListener("click", onClickHandler);
+  btn.addEventListener("click", onClickHandler_2);
+  //btn.onclick = onClickHandler_1;
 }
 
 function onClickHandler() {
@@ -35,7 +35,17 @@ function onClickHandler_1(a) {
 }*/
 
 function onClickHandler_2() {
-    debugger;
-    let target = document.getElementById("divContainer");
-    target.style.borderColor = "Blue";
+  debugger;
+  let target = document.getElementById("divContainer");
+  target.style.borderColor = "Blue";
+}
+
+var checkBox = document.getElementById("chkPreventAction");
+checkBox.addEventListener("click",onCheckBoxCheck);
+function onCheckBoxCheck() {
+  debugger;
+  if (checkBox.checked) {
+    let target = document.getElementById("divTarget");
+    target.style.backgroundColor = "white";
   }
+}

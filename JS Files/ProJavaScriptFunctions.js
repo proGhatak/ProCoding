@@ -39,3 +39,4 @@ window.onload
 {
   projectName.ModuleName.sampleFunction();
 };
+
