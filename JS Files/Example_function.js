@@ -7,75 +7,70 @@ function A(x) {
     }
     B(2);
   }
-  A(1); // logs 6 (1 + 2 + 3)
-
+  A(1); 
+ 
+  
 // name conflict example
-
-  function outside() {
-    var x = 5;
+function outside() {
+    //   debugger;
+    var x = 5;    
     function inside(x) {
+        // debugger;
       return x * 2;
     }
+    // inside(x);
     return inside;
   }
   
-  outside()(10);
+  console.log(outside()(20));
+   
 
+    // Private data
 
-  // Private data
+    var getCode = (function() {
+        let apiCode = '0]Eal(eh&2';    // A code we do not want outsiders to be able to modify...
+      
+        return function() {
+          return apiCode;
+        };
+      })(); 
+      console.log( getCode());
+     
 
-  var getCode = (function() {
-    var apiCode = '0]Eal(eh&2';    // A code we do not want outsiders to be able to modify...
-  
-    return function() {
-      return apiCode;
-    };
-  })();
-  
-  getCode();
+     function myConcat(separator) {
+        var result = ''; // initialize list
+        var i;
+        // iterate through arguments
+        for (i = 1; i < arguments.length; i++) {
+           result += arguments[i] + separator;
+        }
+        console.log(arguments.length);
+        console.log(separator.length);
+        return result;
+     }
 
-  // arguments object
+     console.log(myConcat(',','aa','bb','cc','dd'));
+     
+     function multiply(a , b = 1) {
+        return a * b;
+      }
+      
+      console.log(multiply(5)); 
+     
 
-  function myConcat(separator) {
-    var result = ''; // initialize list
-    var i;
-    // iterate through arguments
-    for (i = 1; i < arguments.length; i++) {
-       result += arguments[i] + separator;
-    }
-    return result;
- }
+    function multiply(multiplier, ...infinite) {
+        return infinite.map(x => multiplier * x);
+      }
+      
+      var arr = multiply(2, 1, 2, 3);
+      console.log(arr);
 
- // Params & default parameter
- function multiply(a, b = 1) {
-    return a * b;
-  }
-  
-  multiply(5); // 5
+      var  multiply = (multiplier, ...theArgs)=> 
+      {
+        return theArgs.map(x => multiplier * x);
+      }
 
-
-  // Rest parameters 
-
-  function multiply(multiplier, ...theArgs) {
-    return theArgs.map(x => multiplier * x);
-  }
-  
-  var arr = multiply(2, 1, 2, 3);
-  console.log(arr); // [2, 4, 6]
-
-  // Arrow functions 
-
-  function Person() {
-    this.age = 0;
-  
-    setInterval(() => {
-      this.age++; // |this| properly refers to the person object
-    }, 1000);
-  }
-  
-  var p = new Person();
-
-  // getter & setter 
+    // getter & setter 
   const obj = {
     log: ['a', 'b', 'c'],
     get latest() {
@@ -85,6 +80,8 @@ function A(x) {
       return this.log[this.log.length - 1];
     }
   };
+
+  console.log(obj.latest);
 
   const language = {
     set current(name) {
@@ -96,4 +93,18 @@ function A(x) {
   language.current = 'EN';
   language.current = 'FA';
   
-  console.log(language.log);
+  console.log(language.log);  
+ 
+
+    // Call Back functions
+    var greeting = (name) => {
+        alert('Hello ' + name);
+      }
+      
+      function processUserInput(callback) {
+        var name = prompt('Please enter your name.');
+        callback(name);
+      }
+      
+      processUserInput(greeting);
+
