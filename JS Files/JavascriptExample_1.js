@@ -19,6 +19,7 @@ function CallMeFunction(input)
         console.log(`${local} ${input}`);
         console.log(`${global} ${input}`);
 
+        
         local = 'Modified local';
 
     }
